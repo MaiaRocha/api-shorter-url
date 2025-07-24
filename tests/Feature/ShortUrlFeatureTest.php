@@ -16,6 +16,7 @@ class ShortUrlFeatureTest extends TestCase
      * Sends a POST request and checks if the shortened URL is returned
      * and stored in the database.
      */
+    /** @test */
     public function user_can_shorten_a_url()
     {
         $response = $this->postJson('/api/shorten-url', [
@@ -36,6 +37,7 @@ class ShortUrlFeatureTest extends TestCase
      * Creates a shortened URL and sends a GET request to retrieve
      * the original URL from it.
      */
+    /** @test */
     public function user_can_decode_a_shortened_url()
     {
         $shortUrl = ShortUrl::create([

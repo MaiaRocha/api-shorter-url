@@ -16,6 +16,7 @@ class DecodeUrlFeatureTest extends TestCase
      * Creates a shortened URL and sends a GET request to decode it,
      * then asserts the response and database content.
      */
+    /** @test */
     public function user_can_decode_a_shortened_url()
     {
         $shortUrl = ShortUrl::create([
@@ -42,6 +43,7 @@ class DecodeUrlFeatureTest extends TestCase
      * Sends a GET request with a non-existent short code and
      * expects a 404 Not Found response.
      */
+    /** @test */
     public function it_returns_404_for_invalid_short_code()
     {
         $response = $this->getJson('/api/s/invalid');

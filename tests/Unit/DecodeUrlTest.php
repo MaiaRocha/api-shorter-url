@@ -15,6 +15,7 @@ class DecodeUrlTest extends TestCase
 	 *
 	 * Creates a short url record and makes a GET request to the decoding endpoint.
 	 */
+	/** @test */
 	public function it_decodes_a_shortened_url()
 	{
 		$shortUrl = ShortUrl::create([
@@ -35,6 +36,7 @@ class DecodeUrlTest extends TestCase
 	 *
 	 * Makes a GET request to an invalid code and expects a 404 response.
 	 */
+	/** @test */
 	public function it_returns_404_for_invalid_short_code()
 	{
 		$response = $this->getJson('/api/s/invalid');

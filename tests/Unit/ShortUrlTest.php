@@ -15,6 +15,7 @@ class ShortUrlTest extends TestCase
      *
      * Sends a valid URL and expects a 200 response with the short_url.
      */
+    /** @test */
     public function it_shortens_a_url_successfully()
     {
         $response = $this->postJson('/api/shorten-url', [
@@ -34,6 +35,7 @@ class ShortUrlTest extends TestCase
      *
      * Sends an invalid URL and expects to receive a 422 response.
      */
+    /** @test */
     public function it_requires_a_valid_url()
     {
         $response = $this->postJson('/api/shorten-url', [
