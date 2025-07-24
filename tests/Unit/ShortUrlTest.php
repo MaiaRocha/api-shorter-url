@@ -10,7 +10,11 @@ class ShortUrlTest extends TestCase
 {
     use RefreshDatabase;
 
-    /** @test */
+    /**
+     * Tests whether a URL is shortened successfully.
+     *
+     * Sends a valid URL and expects a 200 response with the short_url.
+     */
     public function it_shortens_a_url_successfully()
     {
         $response = $this->postJson('/api/shorten-url', [
@@ -25,7 +29,11 @@ class ShortUrlTest extends TestCase
         ]);
     }
 
-    /** @test */
+    /**
+     * Tests whether the URL validation works correctly.
+     *
+     * Sends an invalid URL and expects to receive a 422 response.
+     */
     public function it_requires_a_valid_url()
     {
         $response = $this->postJson('/api/shorten-url', [

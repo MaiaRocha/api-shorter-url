@@ -10,7 +10,12 @@ class ShortUrlFeatureTest extends TestCase
 {
     use RefreshDatabase;
 
-    /** @test */
+    /**
+     * Test if a user can shorten a URL using the API.
+     *
+     * Sends a POST request and checks if the shortened URL is returned
+     * and stored in the database.
+     */
     public function user_can_shorten_a_url()
     {
         $response = $this->postJson('/api/shorten-url', [
@@ -25,7 +30,12 @@ class ShortUrlFeatureTest extends TestCase
         ]);
     }
 
-    /** @test */
+    /**
+     * Test if a user can decode a previously shortened URL.
+     *
+     * Creates a shortened URL and sends a GET request to retrieve
+     * the original URL from it.
+     */
     public function user_can_decode_a_shortened_url()
     {
         $shortUrl = ShortUrl::create([

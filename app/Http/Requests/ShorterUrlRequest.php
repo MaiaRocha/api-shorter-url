@@ -7,7 +7,9 @@ use Illuminate\Foundation\Http\FormRequest;
 class ShorterUrlRequest extends FormRequest
 {
     /**
-     * Determine if the user is authorized to make this request.
+     * Verifica se o usuário está autorizado a fazer a requisição de encurtar URL.
+     *
+     * @return bool Sempre retorna true para permitir o acesso.
      */
     public function authorize(): bool
     {
@@ -15,9 +17,9 @@ class ShorterUrlRequest extends FormRequest
     }
 
     /**
-     * Get the validation rules that apply to the request.
+     * Retorna as regras de validação para o campo URL.
      *
-     * @return array<string, \Illuminate\Contracts\Validation\ValidationRule|array<mixed>|string>
+     * @return array Regras de validação para a requisição.
      */
     public function rules(): array
     {
@@ -26,6 +28,11 @@ class ShorterUrlRequest extends FormRequest
         ];
     }
 
+    /**
+     * Retorna as mensagens de erro personalizadas para validação da URL.
+     *
+     * @return array Mensagens de erro para cada regra de validação.
+     */
     public function messages(): array
     {
         return [
