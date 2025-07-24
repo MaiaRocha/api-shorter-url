@@ -29,8 +29,8 @@ Antes de iniciar, você precisa ter os seguintes softwares instalados:
 ### 1. Clone o repositório
 
 ```bash
-git clone https://github.com/seu-usuario/seu-repositorio.git
-cd seu-repositorio
+git clone https://github.com/MaiaRocha/api-shorter-url.git
+cd api-shorter-url
 ```
 
 ### 2. Copie o arquivo `.env`
